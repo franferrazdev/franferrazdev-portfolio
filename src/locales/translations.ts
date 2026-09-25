@@ -9,7 +9,7 @@ export interface TranslationSchema {
     contact: string;
   };
   hero: { role: string; greeting: string; cvBtn: string };
-  about: { title: string; text: string };
+  about: { title: string; text: string; cardTitle: string; cardText: string };
   skills: { hard: string; soft: string };
   contact: {
     title: string;
@@ -39,6 +39,9 @@ export const translations: Record<Language, TranslationSchema> = {
     about: {
       title: "Sobre Mim",
       text: "Desenvolvedora especialista no ecossistema React e Next.js. Como profissional neurodivergente (TEA), transformo hiperfoco, lógica apurada e atenção extrema aos detalhes em código limpo, estruturado e de alta qualidade. Atuo com máxima eficiência no modelo 100% remoto, entregando autonomia e comunicação escrita impecável.",
+      cardTitle: "Foco e Execução",
+      cardText:
+        "Abordagem voltada à arquitetura limpa, padronização rigorosa de commits e documentação assertiva. Alta adaptabilidade ao ecossistema serverless e rotinas assíncronas de engenharia.",
     },
     skills: {
       hard: "Hard Skills",
@@ -69,6 +72,9 @@ export const translations: Record<Language, TranslationSchema> = {
     about: {
       title: "About Me",
       text: "Developer specializing in the React and Next.js ecosystem. As a neurodivergent profesional (ASD), I transform hyperfocus, sharp logic, and extreme attention to detail into clean, structured, and high-quality code. I operate with maximum efficiency in a 100% remote model, delivering autonomy and flawless written communination.",
+      cardTitle: "Focus & Execution",
+      cardText:
+        "Clean architecture-driven approach, strict commit standartization, and assertive documentation. High adaptability to serverless ecosystems and asynchronous workflows.",
     },
     skills: {
       hard: "Technical Skills",

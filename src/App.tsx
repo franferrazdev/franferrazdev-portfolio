@@ -1,6 +1,7 @@
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LangToggle } from "./components/LangToggle";
 import { HeroSection } from "./sections/HeroSection";
+import { AboutMe } from "./sections/AboutMe";
 
 export default function App() {
   return (
@@ -12,8 +13,9 @@ export default function App() {
       </header>
 
       {/* Área de Conteúdo Principal */}
-      <main className="flex-1 w-full flex flex-col items-center justify-center">
+      <main className="flex-1 w-full flex flex-col items-center justify-start pb-20">
         <HeroSection />
+        <AboutMe />
       </main>
     </div>
   );
