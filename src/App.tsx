@@ -3,6 +3,7 @@ import { LangToggle } from "./components/LangToggle";
 import { HeroSection } from "./sections/HeroSection";
 import { AboutMe } from "./sections/AboutMe";
 import { SkillsSection } from "./sections/SkillsSection";
+import { ProjectsSection } from "./sections/ProjectsSection";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <HeroSection />
         <AboutMe />
         <SkillsSection />
+        <ProjectsSection />
       </main>
     </div>
   );
