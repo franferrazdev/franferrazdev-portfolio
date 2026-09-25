@@ -19,6 +19,13 @@ export interface TranslationSchema {
     send: string;
     success: string;
   };
+  footer: {
+    bio: string;
+    navTitle: string;
+    status: string;
+    copyright: string;
+    system: string;
+  };
 }
 
 // Dicionário de strings de interface
@@ -55,6 +62,13 @@ export const translations: Record<Language, TranslationSchema> = {
       send: "Enviar Mensagem",
       success: "Mensagem enviada com sucesso!",
     },
+    footer: {
+      bio: "Hub centralizado de engenharia de software, expondo arquiteturas limpas, depuração em tempo real e portfólio full-stack.",
+      navTitle: "Navegabilidade",
+      status: "Simulador Técnico Ativo",
+      copyright: "Todos os direitos reservados.",
+      system: "Sistema do Portfólio",
+    },
   },
   en: {
     nav: {
@@ -87,6 +101,13 @@ export const translations: Record<Language, TranslationSchema> = {
       message: "Your Message",
       send: "Send Message",
       success: "Message sent successfully!",
+    },
+    footer: {
+      bio: "Centralized software engineering hub showcasing clean architectures, real-time debugging, and full-stack production portfolios.",
+      navTitle: "Navigation",
+      status: "Technical Simulator Active",
+      copyright: "All rights reserved.",
+      system: "Portfolio System",
     },
   },
 };
