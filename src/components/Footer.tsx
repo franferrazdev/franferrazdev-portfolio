@@ -7,7 +7,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-white dark:bg-bg-dark border-t border-slate-200 dark:border-slate-900 mt-20 px-6 py-12 flex flex-col items-center justify-center transition-colors duration-200 shrink-0">
+    <footer className="w-full bg-bg-light dark:bg-bg-dark border-t border-slate-200 dark:border-slate-900 mt-20 px-6 py-12 flex flex-col items-center justify-center transition-colors duration-200 shrink-0">
       {/* Contêiner Estrutural Simétrico e Centralizado */}
       <div className="w-full max-w-5xl flex flex-col">
         <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-8 pb-8 border-b border-slate-200 dark:border-slate-800/60">

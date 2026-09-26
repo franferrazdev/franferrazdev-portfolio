@@ -52,7 +52,7 @@ export function ContactForm() {
         <div className="w-full max-w-xl mx-auto mt-4">
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-5 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md shadow-xs relative overflow-hidden"
+            className="flex flex-col gap-5 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-bg-light/40 dark:bg-slate-900/40 backdrop-blur-md shadow-xs relative overflow-hidden"
           >
             {/* Campo: Nome */}
             <div className="flex flex-col gap-2">
@@ -65,7 +65,7 @@ export function ContactForm() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 disabled={isSubmitting}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 text-sm text-slate-800 dark:text-white placeholder-slate-400 focus:outline-none focus:border-brand-purple dark:focus:border-brand-neon focus:ring-2 focus:ring-purple-500/10 dark:focus:ring-brand-neon/10 transition-all duration-200 disabled:opacity-50"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-bg-light/50 dark:bg-slate-900/50 text-sm text-slate-800 dark:text-white placeholder-slate-400 focus:outline-none focus:border-brand-purple dark:focus:border-brand-neon focus:ring-2 focus:ring-purple-500/10 dark:focus:ring-brand-neon/10 transition-all duration-200 disabled:opacity-50"
               />
             </div>
 
@@ -80,7 +80,7 @@ export function ContactForm() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={isSubmitting}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 text-sm text-slate-800 dark:text-white placeholder-slate-400 focus:outline-none focus:border-brand-purple dark:focus:border-brand-neon focus:ring-2 focus:ring-purple-500/10 dark:focus:ring-brand-neon/10 transition-all duration-200 disabled:opacity-50"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-bg-light/50 dark:bg-slate-900/50 text-sm text-slate-800 dark:text-white placeholder-slate-400 focus:outline-none focus:border-brand-purple dark:focus:border-brand-neon focus:ring-2 focus:ring-purple-500/10 dark:focus:ring-brand-neon/10 transition-all duration-200 disabled:opacity-50"
               />
             </div>
 
@@ -95,7 +95,7 @@ export function ContactForm() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 disabled={isSubmitting}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 text-sm text-slate-800 dark:text-white placeholder-slate-400 focus:outline-none focus:border-brand-purple dark:focus:border-brand-neon focus:ring-2 focus:ring-purple-500/10 dark:focus:ring-brand-neon/10 transition-all duration-200 resize-none disabled:opacity-50"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-bg-light/50 dark:bg-slate-900/50 text-sm text-slate-800 dark:text-white placeholder-slate-400 focus:outline-none focus:border-brand-purple dark:focus:border-brand-neon focus:ring-2 focus:ring-purple-500/10 dark:focus:ring-brand-neon/10 transition-all duration-200 resize-none disabled:opacity-50"
               />
             </div>
 

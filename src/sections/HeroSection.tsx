@@ -29,7 +29,7 @@ export function HeroSection() {
             target="_blank"
             rel="noopener noreferrer"
             title="Github Global"
-            className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-slate-900/40 hover:scale-110 hover:text-brand-purple dark:text-brand-neon hover:border-brand-purple dark:hover:border-brand-neon transition-all duration-300 cursor-pointer shadow-xs"
+            className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-bg-light/40 dark:bg-slate-900/40 hover:scale-110 hover:text-brand-purple dark:text-brand-neon hover:border-brand-purple dark:hover:border-brand-neon transition-all duration-300 cursor-pointer shadow-xs"
           >
             <FaGithub size={20} />
           </a>
@@ -39,7 +39,7 @@ export function HeroSection() {
             target="_blank"
             rel="noopener noreferrer"
             title="LinkedIn Profissional"
-            className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-slate-900/40 hover:scale-110 hover:text-brand-purple dark:text-brand-neon hover:border-brand-purple dark:hover:border-brand-neon transition-all duration-300 cursor-pointer shadow-xs"
+            className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-bg-light/40 dark:bg-slate-900/40 hover:scale-110 hover:text-brand-purple dark:text-brand-neon hover:border-brand-purple dark:hover:border-brand-neon transition-all duration-300 cursor-pointer shadow-xs"
           >
             <FaLinkedin size={20} />
           </a>
@@ -49,7 +49,7 @@ export function HeroSection() {
             target="_blank"
             rel="noopener noreferrer"
             title="Contato via E-mail"
-            className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-slate-900/40 hover:scale-110 hover:text-brand-purple dark:text-brand-neon hover:border-brand-purple dark:hover:border-brand-neon transition-all duration-300 cursor-pointer shadow-xs"
+            className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-bg-light/40 dark:bg-slate-900/40 hover:scale-110 hover:text-brand-purple dark:text-brand-neon hover:border-brand-purple dark:hover:border-brand-neon transition-all duration-300 cursor-pointer shadow-xs"
           >
             <Mail size={20} />
           </a>
@@ -59,7 +59,7 @@ export function HeroSection() {
             target="_blank"
             rel="noopener noreferrer"
             title="Comunidade Discord"
-            className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-slate-900/40 hover:scale-110 hover:text-brand-purple dark:text-brand-neon hover:border-brand-purple dark:hover:border-brand-neon transition-all duration-300 cursor-pointer shadow-xs"
+            className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-bg-light/40 dark:bg-slate-900/40 hover:scale-110 hover:text-brand-purple dark:text-brand-neon hover:border-brand-purple dark:hover:border-brand-neon transition-all duration-300 cursor-pointer shadow-xs"
           >
             <MessageSquare size={20} />
           </a>

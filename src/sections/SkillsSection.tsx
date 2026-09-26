@@ -77,7 +77,7 @@ export function SkillsSection() {
             {hardSkills.map((skill) => (
               <div
                 key={skill.name}
-                className="flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md text-xs font-bold text-slate-700 dark:text-slate-300 hover:scale-105 hover:border-brand-purple dark:hover:border-brand-neon hover:text-brand-purple dark:hover:text-brand-neon transition-all duration-300 cursor-default shadow-xs"
+                className="flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-bg-light/40 dark:bg-slate-900/40 backdrop-blur-md text-xs font-bold text-slate-700 dark:text-slate-300 hover:scale-105 hover:border-brand-purple dark:hover:border-brand-neon hover:text-brand-purple dark:hover:text-brand-neon transition-all duration-300 cursor-default shadow-xs"
               >
                 <span className="text-slate-400 dark:text-slate-500">
                   {skill.icon}
@@ -102,7 +102,7 @@ export function SkillsSection() {
             {softSkills.map((skill) => (
               <div
                 key={skill.en}
-                className="flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md text-xs font-bold text-slate-700 dark:text-slate-300 hover:scale-105 hover:border-brand-purple dark:hover:border-brand-neon hover:text-brand-purple dark:hover:text-brand-neon transition-all duration-300 cursor-default shadow-xs"
+                className="flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-bg-light/40 dark:bg-slate-900/40 backdrop-blur-md text-xs font-bold text-slate-700 dark:text-slate-300 hover:scale-105 hover:border-brand-purple dark:hover:border-brand-neon hover:text-brand-purple dark:hover:text-brand-neon transition-all duration-300 cursor-default shadow-xs"
               >
                 <span className="text-slate-400 dark:text-slate-500">
                   {skill.icon}
