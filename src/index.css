@@ -11,8 +11,10 @@
 
   /* Definição das Animações Customizadas */
   --animate-float: float 4s ease-in-out infinite;
+
   --animate-typing:
     typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  --animate-fade-in: fadeIn 0.5s ease-out forwards;
 
   /* Keyframes Nativos das Animações */
   @keyframes float {
@@ -73,5 +75,20 @@
 
   html.dark body {
     background-color: var(--color-bg-dark);
+  }
+
+  /* Configuração base da seção antes de surgir */
+  .reveal-section {
+    opacity: 0;
+    transform: translateX(-40px);
+    /* transition: all garante que cores, opacidade e transform animem juntos em 0.8s */
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity, background-color, color;
+  }
+
+  /* Quando a seção entrar na tela, ela ganha essa classe e desliza suavemente */
+  .reveal-section.active {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

@@ -60,7 +60,7 @@ export function SkillsSection() {
   return (
     <section
       id="skills"
-      className="w-full max-w-5xl mx-auto px-6 py-16 flex flex-col gap-12 transition-colors duration-200"
+      className="w-full max-w-5xl mx-auto px-6 py-28 sm:py-36 flex flex-col gap-12"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Hard Skills */}

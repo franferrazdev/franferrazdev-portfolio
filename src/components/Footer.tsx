@@ -34,6 +34,12 @@ export function Footer() {
             </span>
             <div className="flex flex-col gap-1.5 text-xs font-semibold text-slate-500 dark:text-slate-400">
               <a
+                href="#hero"
+                className="hover:text-brand-purple dark:hover:text-brand-neon transition-colors cursor-pointer w-fit"
+              >
+                {t.nav.home}
+              </a>
+              <a
                 href="#about"
                 className="hover:text-brand-purple dark:hover:text-brand-neon transition-colors cursor-pointer w-fit"
               >
@@ -50,6 +56,12 @@ export function Footer() {
                 className="hover:text-brand-purple dark:hover:text-brand-neon transition-colors cursor-pointer w-fit"
               >
                 {t.nav.projects}
+              </a>
+              <a
+                href="#contact"
+                className="hover:text-brand-purple dark:hover:text-brand-neon transition-colors cursor-pointer w-fit"
+              >
+                {t.nav.contact}
               </a>
             </div>
           </div>

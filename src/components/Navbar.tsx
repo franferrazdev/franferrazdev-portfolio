@@ -6,50 +6,31 @@ import { LangToggle } from "@/components/LangToggle";
 
 export function Navbar() {
   const { t } = useLanguage();
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState("hero");
 
   // Mapeamentos dos links de ancoragem interna de acordo com as seções da página
   const navLinks = [
+    { label: t.nav.home, href: "#hero", id: "hero" },
     { label: t.nav.about, href: "#about", id: "about" },
     { label: t.nav.skills, href: "#skills", id: "skills" },
     { label: t.nav.projects, href: "#projects", id: "projects" },
     { label: t.nav.contact, href: "#contact", id: "contact" },
   ];
 
-  //   Algoritmo de Rastreamento de Seção para One-Pages Portfólios
+  //   Escuta o observador central do eixo Y para mover o traço roxo em sincronia com a section atual
   useEffect(() => {
-    const handleScrool = () => {
-      const scrollPosition = window.scrollY + 160; // 160px de margem para ativar antes de bater no topo
-
-      // Verifica se o usuário está no topo da página (Hero)
-      if (window.scrollY < 300) {
-        setActiveSection("");
-        return;
-      }
-
-      // Descobre qual seção está cruzando a linha de ativação
-      for (const link of navLinks) {
-        const element = document.getElementById(link.id);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
-
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(link.id);
-            break; // Para o laço assim que encontra a seção atual
-          }
-        }
-      }
+    const handleSectionChange = (e: Event) => {
+      // Informa que o evento contém detail como o ID da seção
+      const customEvent = e as CustomEvent<string>;
+      // Atualiza o estado da navegação com o ID
+      setActiveSection(customEvent.detail);
     };
 
-    window.addEventListener("scroll", handleScrool, {passive: true})
-//    Executa uma vez no carregamento inicial para validar a posição atual
-    handleScrool()
-
-    return ()=> window.removeEventListener("scroll", handleScrool)
+    // Registra a função para ouvir o evento
+    window.addEventListener("sectionChange", handleSectionChange);
+    // Remove o ouvinte quando o componente é desmontado
+    return () =>
+      window.removeEventListener("sectionChange", handleSectionChange);
   }, []);
 
   return (
@@ -59,6 +40,7 @@ export function Navbar() {
         {/* Branding / Logotipo */}
         <a
           href="#"
+          onClick={() => setActiveSection("hero")}
           className="flex items-center gap-2 text-sm font-black tracking-wider bg-linear-to-r from-brand-purple to-purple-400 dark:from-brand-neon dark:to-violet-400  bg-clip-text text-transparent uppercase cursor-pointer"
         >
           <Shield
@@ -85,7 +67,9 @@ export function Navbar() {
                 {/* Traço Horizontal que expande e acende na seção ativa */}
                 <span
                   className={`absolute bottom-0 left-0 h-0.75 bg-brand-purple dark:bg-brand-neon rounded-t-full w-full transition-all duration-300 origin-center ${
-                    isCurrent ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
+                    isCurrent
+                      ? "scale-x-100 opacity-100"
+                      : "scale-x-0 opacity-0"
                   }`}
                 />
               </a>
