@@ -29,7 +29,7 @@ export function AboutMe() {
         </div>
 
         {/* Card de Destaque Técnico Lateral */}
-        <div className="md:col-span-4 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md flex flex-col gap-3 shadow-xs">
+        <div className="md:col-span-4 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-bg-light/40 dark:bg-slate-900/40 backdrop-blur-md flex flex-col gap-3 shadow-xs">
           <div className="flex items-center gap-2 text-xs font-bold text-brand-purple dark:text-brand-neon uppercase tracking-wider">
             <Sparkles size={14} />
             {t.about.cardTitle}

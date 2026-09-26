@@ -62,7 +62,7 @@ export function ProjectsSection() {
         {projectsData.map((project) => (
           <div
             key={project.title}
-            className="flex flex-col justify-between p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md hover:scale-105 hover:border-brand-purple dark:hover:border-brand-neon hover:shadow-xl hover:shadow-purple-600/5 dark:hover:shadow-none transition-all duration-300 group"
+            className="flex flex-col justify-between p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-bg-light/40 dark:bg-slate-900/40 backdrop-blur-md hover:scale-105 hover:border-brand-purple dark:hover:border-brand-neon hover:shadow-xl hover:shadow-purple-600/5 dark:hover:shadow-none transition-all duration-300 group"
           >
             {/* Bloco Superior (Imagem, Título, Descrição e Badges) */}
             <div className="flex flex-col gap-4">
