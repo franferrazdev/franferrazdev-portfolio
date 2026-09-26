@@ -2,23 +2,55 @@ import { Mail, MessageSquare, Download } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useLanguage } from "@/context/LanguageContext";
 import { connections } from "@/locales/translations";
+import { useEffect, useState } from "react";
 
 export function HeroSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const [typedRole, setTypedRole]= useState("")
+  const fullText = t.hero.role
+
+  useEffect(()=>{
+    setTypedRole("") // Limpa o texto imediatamente ao trocar de idioma ou recarregar
+
+    // Cria uma variável de controle local isolada para evitar conflitos de escopo
+    let currentText = ""
+    let currentIndex = 0
+
+    const typinkInterval = setInterval(()=>{
+      if(currentIndex < fullText.length){
+        // Captura a letra exata usando chartAt
+        const nextChar = fullText.charAt(currentIndex)
+        currentText += nextChar;
+
+        // Atualiza o estado com o acumulador local estável
+        setTypedRole(currentText)
+        currentIndex++
+      }else{
+        // Garante a limpeza assim que atingir o comprimento total real
+        clearInterval(typinkInterval)
+      }
+    }, 55) // 55ms controla a velocidade da digitação de cada letra
+
+    // Limpeza obrigatória para evitar loops infinitos na troca de abas ou idiomas
+    return () => clearInterval(typinkInterval)
+  }, [language, fullText]) // Monitora o idioma e o texto completo
 
   return (
-    <section className="w-full max-w-5xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-12 min-h-[calc(100vh-80px)]">
+    <section id="hero" className="w-full max-w-5xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-12 min-h-[calc(100vh-80px)]">
+
       {/* Bloco de Textos e Conexões */}
       <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left gap-6 order-2 md:order-1">
+
         {/* Saudação com o Nome Completo */}
         <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-slate-800 dark:text-slate-100 leading-tight">
           {t.hero.greeting}
         </h1>
 
-        {/* Bloco com o Nome da Profissão */}
-        <div className="w-fit overflow-hidden border-r-4 border-brand-purple dark:border-brand-neon pr-1 whitespace-nowrap animate-typing">
+        {/* Bloco com o Nome da Profissão com Efeito de Digitação Fluida*/}
+        <div className="w-fit border-r-4 border-brand-purple dark:border-brand-neon pr-1 whitespace-nowrap animate-blink">
           <span className="text-xl sm:text-2xl font-extrabold bg-linear-to-r from-brand-purple to-purple-400 dark:from-brand-neon dark:to-violet-400 bg-clip-text text-transparent">
-            {t.hero.role}
+            {typedRole}
           </span>
         </div>
 

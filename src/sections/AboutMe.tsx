@@ -7,7 +7,7 @@ export function AboutMe() {
   return (
     <section
       id="about"
-      className="w-full max-w-5xl mx-auto px-6 py-16 flex flex-col gap-8 transition-colors duration-200"
+      className="w-full max-w-5xl mx-auto px-6 py-16 flex flex-col gap-12"
     >
       {/* Cabeçalho da Seção */}
       <div className="flex items-center gap-3 border-b border-slate-200/60 dark:border-slate-800/60 pb-4 w-full">

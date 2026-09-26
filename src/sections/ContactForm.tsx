@@ -37,7 +37,7 @@ export function ContactForm() {
   return (
     <section
       id="contact"
-      className="w-full max-w-5xl mx-auto px-6 py-16 flex flex-col gap-8 transition-colors duration-200"
+      className="w-full max-w-5xl mx-auto px-6 py-16 flex flex-col gap-8"
     >
       {/* Cabeçalho da Seção */}
       <div className="flex items-center gap-3 border-b border-slate-200/60 dark:border-slate-800/60 pb-4 w-full">
@@ -101,7 +101,7 @@ export function ContactForm() {
 
             {/* Alerta Dinâmico de Sucesso Bilíngue */}
             {isSuccess && (
-              <div className="flex items-center gap-2.5 p-3.5 rounded-xl border border-e-mist-200 dark:border-emerald-900/50 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold transition-all duration-350 animate-fade-in animate-pulse">
+              <div className="flex items-center gap-2.5 p-3.5 rounded-xl border border-e-mist-200 dark:border-emerald-900/50 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold transition-all duration-350 animate-fade-in">
                 <CheckCircle2 size={16} className="shrink-0" />
                 {t.contact.success}
               </div>
