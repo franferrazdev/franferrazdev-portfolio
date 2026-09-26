@@ -1,4 +1,4 @@
-import { useEffect, useState, startTransition } from "react";
+import { useEffect, useState } from "react";
 import { Shield } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -45,11 +45,11 @@ export function Navbar() {
       }
     };
 
-    window.addEventListener("scroll", handleScrool, { passive: true });
-    //    Executa uma vez no carregamento inicial para validar a posição atual
-    handleScrool();
+    window.addEventListener("scroll", handleScrool, {passive: true})
+//    Executa uma vez no carregamento inicial para validar a posição atual
+    handleScrool()
 
-    return () => window.removeEventListener("scroll", handleScrool);
+    return ()=> window.removeEventListener("scroll", handleScrool)
   }, []);
 
   return (
@@ -85,9 +85,7 @@ export function Navbar() {
                 {/* Traço Horizontal que expande e acende na seção ativa */}
                 <span
                   className={`absolute bottom-0 left-0 h-0.75 bg-brand-purple dark:bg-brand-neon rounded-t-full w-full transition-all duration-300 origin-center ${
-                    isCurrent
-                      ? "scale-x-100 opacity-100"
-                      : "scale-x-0 opacity-0"
+                    isCurrent ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
                   }`}
                 />
               </a>
