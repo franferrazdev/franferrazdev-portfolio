@@ -1,14 +1,18 @@
-import { HeroSection } from "./sections/HeroSection";
-import { AboutMe } from "./sections/AboutMe";
-import { SkillsSection } from "./sections/SkillsSection";
-import { ProjectsSection } from "./sections/ProjectsSection";
-import { ContactForm } from "./sections/ContactForm";
-import { Footer } from "./components/Footer";
-import { Navbar } from "./components/Navbar";
+import { HeroSection } from "@/sections/HeroSection";
+import { Helmet } from "react-helmet-async";
+import { AboutMe } from "@/sections/AboutMe";
+import { SkillsSection } from "@/sections/SkillsSection";
+import { ProjectsSection } from "@/sections/ProjectsSection";
+import { ContactForm } from "@/sections/ContactForm";
+import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
 import { useEffect, useRef } from "react";
-import { ScrollArrow } from "./components/ScrollArrow";
+import { ScrollArrow } from "@/components/ScrollArrow";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function App() {
+  const { language } = useLanguage();
+
   // Trava lógica estável de referência para ignorar colisões no scroll
   const isLocked = useRef(false);
   /* Algoritmo que ativa as animações ao rolar a página com micro-tolerância para garantir que o React carregou 100% dos elementos na árvore DOM */
@@ -75,6 +79,31 @@ export default function App() {
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-transparent text-slate-800 dark:text-slate-100 transition-colors duration-300 overflow-x-hidden">
+      {/* Bloco Dinâmico de SEO Avançado */}
+      <Helmet>
+        {/* Título Dinâmico Bilíngue */}
+        <title>
+          {language === "pt"
+            ? "Francielle Ferraz | Desenvolvedora Fron-End"
+            : "Francielle Ferraz | Front-End Developer"}
+        </title>
+        {/* Favicon */}
+        <link rel="icon" title="image/png" href="./favicon.png" />
+
+        {/* Tags Meta */}
+        <meta
+          name="description"
+          content={
+            language === "pt"
+              ? "Portfólio Front-End de Francielle Ferraz. Conheça meus sistemas modernos construídos em React, Next.js e testados com Jest e Playwright."
+              : "Fron-End Portfolio of Francielle Ferraz. Explore my modern systems built with React, Next.js, and tested with Jest and Playwright."
+          }
+        />
+        <meta name="author" content="Francielle Ferraz de Sousa" />
+        <meta property="og:image" content="./favicon.png" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
       {/* Barra Superior de Controles de Acessibilidade */}
       <Navbar />
 
