@@ -5,12 +5,25 @@ import { ProjectsSection } from "./sections/ProjectsSection";
 import { ContactForm } from "./sections/ContactForm";
 import { Footer } from "./components/Footer";
 import { Navbar } from "./components/Navbar";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { ScrollArrow } from "./components/ScrollArrow";
 
 export default function App() {
-  // Algoritmo que ativa as animações ao rolar a página com micro-tolerância para garantir que o React carregou 100% dos elementos na árvore DOM
+  // Trava lógica estável de referência para ignorar colisões no scroll
+  const isLocked = useRef(false);
+  /* Algoritmo que ativa as animações ao rolar a página com micro-tolerância para garantir que o React carregou 100% dos elementos na árvore DOM */
   useEffect(() => {
     let globalObserver: IntersectionObserver | null = null;
+
+    // Escuta cliques na seta flutuante para trancar checagens de scroll por 800ms
+    const handleLock = () => {
+      isLocked.current = true;
+      setTimeout(() => {
+        isLocked.current = false;
+      }, 800);
+    };
+
+    window.addEventListener("lockScroll", handleLock);
 
     const initObserver = () => {
       const sections = document.querySelectorAll("section");
@@ -22,28 +35,29 @@ export default function App() {
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              // Dispara o surgimento da esquerda para a direita
+              // Dispara o surgimento da esquerda para a direita e mantém a seção visível permanentemente após o primeiro impacto
               entry.target.classList.add("active");
-
-              // Atualiza a URL do navegador em tempo real com a seção atual
-              const id = entry.target.id;
-              if (id) {
-                window.history.replaceState(null, "", `#${id}`);
-
-                // Comunica à Navbar de forma nativa qual link deve acender o traço roxo
-                const navEvent = new CustomEvent("sectionChange", {
-                  detail: id,
-                });
-                window.dispatchEvent(navEvent);
-              }
             } else {
-              // Remove a classe ao sair do centro da tela (eixo Y) para permitir reanimação infinita
               entry.target.classList.remove("active");
+            }
+
+            if (!entry.isIntersecting || isLocked.current) return;
+
+            // Atualiza a URL do navegador em tempo real com a seção atual
+            const id = entry.target.id;
+            if (id) {
+              window.history.replaceState(null, "", `/#${id}`);
+
+              window.dispatchEvent(
+                new CustomEvent("sectionChange", {
+                  detail: id,
+                }),
+              );
             }
           });
         },
-        // Faz a classe active ser adicionada ao entrar na faixa e removida ao sair
-        { rootMargin: "-50% 0px -50% 0px", threshold: 0 },
+        // Faixa vervical que garante a captura das sessões ao frear
+        { rootMargin: "-10% 0px -10% 0px", threshold: 0.01 },
       );
 
       sections.forEach((section) => globalObserver?.observe(section));
@@ -54,9 +68,11 @@ export default function App() {
 
     return () => {
       clearTimeout(timeoutId);
+      window.removeEventListener("lockScroll", handleLock);
       globalObserver?.disconnect();
     };
   }, []);
+
   return (
     <div className="min-h-screen w-full flex flex-col bg-transparent text-slate-800 dark:text-slate-100 transition-colors duration-300 overflow-x-hidden">
       {/* Barra Superior de Controles de Acessibilidade */}
@@ -72,6 +88,8 @@ export default function App() {
       </main>
 
       <Footer />
+
+      <ScrollArrow />
     </div>
   );
 }

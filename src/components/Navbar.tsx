@@ -56,6 +56,12 @@ export function Navbar() {
             const isCurrent = activeSection === link.id;
             return (
               <a
+                onClick={() => {
+                  // Força o traço roxo a aparecer no nome da section clicada
+                  setActiveSection(link.id);
+                  // Avisa o App.tsx para silenciar os sensores temporariamente durante o deslize
+                  window.dispatchEvent(new CustomEvent("lockScroll"));
+                }}
                 key={link.href}
                 href={link.href}
                 className={`relative h-full flex items-center transition-colors duration-300 hover:text-brand-purple dark:hover:text-brand-neon ${
