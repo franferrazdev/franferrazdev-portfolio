@@ -1,5 +1,5 @@
 import { useLanguage } from "@/context/LanguageContext";
-import { FolderGit2, ExternalLink } from "lucide-react";
+import { FolderGit2, ExternalLink, CheckSquare, Tv } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
 export function ProjectsSection() {
@@ -11,6 +11,11 @@ export function ProjectsSection() {
       title: "Live Coding Bug Quiz",
       image: "/projects/welcome-screen.png",
       tags: ["React", "TypeScript", "Tailwind CSS", "Lucide Icons"],
+      testSuite: {
+        name: "Jest & RTL",
+        icon: <CheckSquare size={11} />,
+        type: "unit",
+      },
       github: "https://github.com/franferrazdev/live-coding-bug-quiz",
       live: "https://live-coding-bug-quiz-one.vercel.app/",
       pt: "Simulador técnico interativo homologado para testes de Code Review, depuração de erros em tempo real e avaliação de serioridade front-end.",
@@ -26,6 +31,7 @@ export function ProjectsSection() {
         "PostgreSQL",
         "Tailwind CSS",
       ],
+      testSuite: { name: "Playwright", icon: <Tv size={11} />, type: "e2e" },
       github: "https://github.com/franferrazdev/school-management-dashboard",
       live: "https://school-management-dashboard-woad.vercel.app/",
       pt: "Plataforma corporativa full-stack de gestão escolar, Business Intelligence, controle analítico de notas e gerenciamento de chamadas.",
@@ -35,6 +41,11 @@ export function ProjectsSection() {
       title: "Night Owl E-commerce",
       image: "/projects/night-owl-screen.png",
       tags: ["React", "TypeScript", "Tailwind CSS", "Context API", "Stripe"],
+      testSuite: {
+        name: "Jest & RTL",
+        icon: <CheckSquare size={11} />,
+        type: "unit",
+      },
       github: "https://github.com/franferrazdev/night-owl-ecommerce",
       live: "https://night-owl-ecommerce.vercel.app/",
       pt: "Plataforma de vendas online completa contendo catálogo reativo, gerenciamento avançado de carrinho e checkout fluido.",
@@ -58,7 +69,7 @@ export function ProjectsSection() {
       </div>
 
       {/* Grid Responsiva de Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch w-full mt-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch w-full mt-2">
         {projectsData.map((project) => (
           <div
             key={project.title}
@@ -67,10 +78,10 @@ export function ProjectsSection() {
             {/* Bloco Superior (Imagem, Título, Descrição e Badges) */}
             <div className="flex flex-col gap-4">
               {/* Banner Visual do Projeto */}
-              <div className="relative w-full h-44 bg-linear-to-br from-brand-purple/10 to-purple-900/5 dark:from-purple-950/40 dark:to-slate-900/20 border-b border-slate-100 dark:border-slate-800/50 overflow-hidden flex items-center justify-center">
+              <div className="relative w-full h-56 sm:h-64 bg-linear-to-br from-brand-purple/10 to-purple-900/5 dark:from-purple-950/40 dark:to-slate-900/20 border-b border-slate-100 dark:border-slate-800/50 overflow-hidden flex items-center justify-center">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={`Screenshot ${project.title}`}
                   onError={(e) => {
                     // Oculta a tag de imagem se o arquivo não for encontrado
                     e.currentTarget.style.display = "none";
@@ -79,10 +90,26 @@ export function ProjectsSection() {
                 />
               </div>
 
-              <div className="flex flex-col gap-3 px-5">
-                <h3 className="text-lg font-extrabold text-slate-800 dark:text-white group-hover:text-brand-purple dark:group-hover:text-brand-neon transition-colors">
-                  {project.title}
-                </h3>
+              {/* Textos Internos e Alinhamento de Tags */}
+              <div className="flex flex-col gap-3 px-6">
+                {/* Cabeçalho Interno do Card */}
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="text-xl font-black text-slate-800 dark:text-white group-hover:text-brand-purple dark:group-hover:text-brand-neon transition-colors">
+                    {project.title}
+                  </h3>
+
+                  {/* Badge Técnica de Testes */}
+                  <span
+                    className={`flex items-center gap-1.5 text-[9px] font-black tracking-wider uppercase px-2.5 py-1 rounded-md border shrink-0 transition-colors select-none ${
+                      project.testSuite.type === "e2e"
+                        ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20 dark:border-amber-500/30"
+                        : "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20 dark:border-emerald-500/30"
+                    }`}
+                  >
+                    {project.testSuite.icon}
+                    {project.testSuite.name}
+                  </span>
+                </div>
 
                 <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
                   {language === "pt" ? project.pt : project.en}

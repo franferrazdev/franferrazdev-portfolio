@@ -11,6 +11,8 @@ import {
   Clock,
   Sparkles,
   Lightbulb,
+  CheckSquare,
+  Tv,
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -23,6 +25,8 @@ export function SkillsSection() {
     { name: "TypeScript", icon: <FileCode size={14} /> },
     { name: "Next.js", icon: <Layers size={14} /> },
     { name: "Tailwind CSS", icon: <Terminal size={14} /> },
+    { name: "Jest & RTL", icon: <CheckSquare size={14} /> },
+    { name: "Playwright", icon: <Tv size={14} /> },
     { name: "Prisma ORM", icon: <Database size={14} /> },
     { name: "PostgreSQL", icon: <Database size={14} /> },
   ];
