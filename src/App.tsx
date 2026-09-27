@@ -6,16 +6,22 @@ import { ProjectsSection } from "@/sections/ProjectsSection";
 import { ContactForm } from "@/sections/ContactForm";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ScrollArrow } from "@/components/ScrollArrow";
 import { useLanguage } from "@/context/LanguageContext";
+import { LoadingScreen } from "./components/LoadingScreen";
 
 export default function App() {
   const { language } = useLanguage();
 
   // Trava lógica estável de referência para ignorar colisões no scroll
   const isLocked = useRef(false);
-  /* Algoritmo que ativa as animações ao rolar a página com micro-tolerância para garantir que o React carregou 100% dos elementos na árvore DOM */
+
+  // Estado que controla se o sistema já concluiu o boot de inicialização
+  const [isLoading, setIsLoading]= useState(true)
+
+  /* Algoritmo que ativa as animações ao rolar a página com micro-tolerância para garantir que o React carregou 100% dos elementos na árvore DOM 
+ */
   useEffect(() => {
     let globalObserver: IntersectionObserver | null = null;
 
@@ -79,7 +85,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-transparent text-slate-800 dark:text-slate-100 transition-colors duration-300 overflow-x-hidden">
-      {/* Bloco Dinâmico de SEO Avançado */}
+      {/* Bloco Dinâmico de SEO */}
       <Helmet>
         {/* Título Dinâmico Bilíngue */}
         <title>
@@ -88,7 +94,7 @@ export default function App() {
             : "Francielle Ferraz | Front-End Developer"}
         </title>
         {/* Favicon */}
-        <link rel="icon" title="image/png" href="./favicon.png" />
+        <link rel="icon" title="image/png" href="public/favicon.png" />
 
         {/* Tags Meta */}
         <meta
@@ -100,9 +106,12 @@ export default function App() {
           }
         />
         <meta name="author" content="Francielle Ferraz de Sousa" />
-        <meta property="og:image" content="./favicon.png" />
+        <meta property="og:image" content="public/favicon.png" />
         <meta property="og:type" content="website" />
       </Helmet>
+
+      {/* Renderiza a Splash Screen interativa se o estado isLoading for verdadeiro */}
+      {isLoading && <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />}
 
       {/* Barra Superior de Controles de Acessibilidade */}
       <Navbar />

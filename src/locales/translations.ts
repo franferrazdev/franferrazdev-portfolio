@@ -26,6 +26,10 @@ export interface TranslationSchema {
     copyright: string;
     system: string;
   };
+  loading: {
+    booting: string;
+    footer: string;
+  };
 }
 
 // Dicionário de strings de interface
@@ -71,6 +75,10 @@ export const translations: Record<Language, TranslationSchema> = {
       copyright: "Todos os direitos reservados.",
       system: "Sistema do Portfólio",
     },
+    loading: {
+      booting: "Inicializando Sistema...",
+      footer: "Inicialização do Núcleo \\ Ambiente Totalmente Testado",
+    },
   },
   en: {
     nav: {
@@ -112,6 +120,10 @@ export const translations: Record<Language, TranslationSchema> = {
       status: "Technical Simulator Active",
       copyright: "All rights reserved.",
       system: "Portfolio System",
+    },
+    loading: {
+      booting: "System Booting...",
+      footer: "Core Init \\ Fully Tested Environment",
     },
   },
 };
