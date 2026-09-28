@@ -1,6 +1,7 @@
-import { Shield, Globe, User, Mail, MessageSquare } from "lucide-react";
+import { Shield, Mail, MessageSquare } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { connections } from "@/locales/translations";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export function Footer() {
   const { t, language } = useLanguage();
@@ -79,7 +80,7 @@ export function Footer() {
                 title="Acessar Portfólio Global no GitHub"
                 className="hover:text-brand-purple dark:hover:text-brand-neon transition-colors cursor-pointer"
               >
-                <Globe size={16} />
+                <FaGithub size={16} />
               </a>
 
               <a
@@ -89,7 +90,7 @@ export function Footer() {
                 title="Conectar Perfil Profissional no LinkedIn"
                 className="hover:text-brand-purple dark:hover:text-brand-neon transition-colors cursor-pointer"
               >
-                <User size={16} />
+                <FaLinkedin size={16} />
               </a>
 
               <a
