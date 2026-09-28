@@ -1,75 +1,83 @@
-# React + TypeScript + Vite
+# 🌌 franferrazdev-portfolio 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+<!-- Badges de Tecnologias -->
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"  align="center" alt="React Icon" height="20" width="30" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" align="center" alt="TypeScript Icon" height="20" width="30" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"  align="center" alt="TailwindCSS Icon" height="20" width="30" />
+</div>
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🗺️ Language Choice · Escolha de Idioma
 
-## React Compiler
+- [Clique aqui para ler em Português (Abaixo)](#-português)
+- [Clique here to read in English (Below)](#-english)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🇧🇷 Português
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 📝 Descrição
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Hub centralizado e portfólio de engenharia de software focado em **Desenvolvimento Front-End**. A aplicação expõe componentes altamente otimizados e síncronos, com suporte completo e acessibilidade (Light/Dark Mode), internacionalização em tempo real (Bilingue) e foco em **resistência de código** através de uma esteira robusta de testes automatizados unitários e end-to-end (E2E).
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Como profissional neurodivergente **(TEA)**, este projeto traduz hiperfoco, lógica apurada e atenção extrema aos detalhes em uma arquitetura limpa, modular e componentizada de alta fidelidade.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🔗 Link de Produção
 
-```
+🚀 Acesse a aplicação completa ao vivo: **[Visualizar Portfólio na Vercel](https://vercel.app)** _(Link temporário - Ajuste após o deploy)_
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### 🎥 Demonstração Visual (Project Showcase)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+<div align="center">
+  <img src="public/projects/portfolio-hero.png" alt="Portfolio Preview" width="100%" style="border-radius: 12px; border: 1px solid #1e293b;" />
+</div>
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🛠️ Diferenciais Técnicos e Arquitetura
 
-```
+- **IntersectionObserver Fluido:** Gerenciamento centralizado em `src/App.tsx` para sincronizar rotas hash, animações de scroll da esquerda para a direita e marcadores da Navbar em tempo real no eixo Y.
+- **Navegação Inteligente Síncrona:** Componente `ScrollArrow` calibrado com travas de concorrência (`useRef`) para garantir navegação cronológica precisa e suave sem pular blocos.
+- **Formulário de Contato Assíncrono:** Integração real de captação de mensagens com o Formspree via requisição nativa `fetch`, encapsulada sob camadas seguras de variáveis de ambiente do Vite (`.env`).
+
+### 🧪 Pirâmide de Testes Automatizados e CI/CD
+
+Este ambiente possui uma suíte de testes rigorosa para blindar o código contra erros regressivos:
+
+1.  **Testes Unitários e de Integração (Jest & React Testing Library):** Mapeamento do ciclo de vida dos cliques da `Navbar`, tradução de strings no `LanguageContext` e mutação de classes do Tailwind no `ThemeContext`.
+2.  **Testes End-to-End (Playwright):** Simulação automatizada da jornada do recrutador de ponta a ponta (aguarda o boot da `LoadingScreen`, executa cliques forçados em elementos flutuantes quicantes, chaveia idiomas e dispara o formulário de contato).
+3.  **Integração Contínua (GitHub Actions):** Automação em nuvem (`playwright.yml`) que roda a suíte de testes em cada Pull Request antes de liberar o merge na branch principal (`main`).
+
+---
+
+## 🇺🇸 English
+
+### 📝 Description
+
+A centralized software engineering hub and portfolio tailored for **Front-End Development**. The application exhibits highly optimized, synchronous components featuring comprehensive accessibility support (Light/Dark Mode), real-time internationalization (Bilingual), and an absolute focus on **code resilience** driven by a robust pipeline of automated unit and end-to-end (E2E) tests.
+
+As a neurodivergent professional **(ASD)**, this project converts hyperfocus, sharp logic, and extreme attention to detail into a clean, modular, and componentized architecture of high fidelity.
+
+### 🔗 Production Link
+
+🚀 Access the live running application: **[View Portfolio on Vercel](https://vercel.app)** _(Temporary link - Adjust after deployment)_
+
+### 🛠️ Technical Highlights & Architecture
+
+- **Fluid IntersectionObserver:** Centralized hook management within `src/App.tsx` to handle synchronized hash routes, viewport scroll animations, and top navigation bar states seamlessly across the Y-axis.
+- **Synchronous Smart Navigation:** `ScrollArrow` component reinforced with reactivity blocks (`useRef`) to assure sequential element steps without skipping short content layouts.
+- **Asynchronous Lead Capturing:** Production-ready mail integration via native `fetch` targeting Formspree API engines, entirely protected by structural Vite metadata environment files (`.env`).
+
+### 🧪 Automated Testing Suites & CI/CD
+
+This workspace maintains a strict testing matrix to safeguard interfaces against breaking shifts:
+
+1.  **Unit & Integration Tests (Jest & React Testing Library):** Direct checks on `Navbar` link clicking lifecycles, full bilingual translation responses in `LanguageContext`, and style assignments in `ThemeContext`.
+2.  **End-to-End Tests (Playwright):** Simulates the recruiter's path (waits for `LoadingScreen` system boots, performs strict clicks on bouncing components, toggles languages, and validates form dispatches).
+3.  **Continuous Integration (GitHub Actions):** Automation pipeline (`playwright.yml`) that triggers and executes tests on every remote Pull Request prior to allowing final main repository merges.
+
+---
+
+<div align="center">
+  <sub>Desenvolvido com hiperfoco por <strong>Francielle Ferraz</strong> · © 2026</sub>
+</div>
