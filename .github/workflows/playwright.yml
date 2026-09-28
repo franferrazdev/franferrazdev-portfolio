@@ -10,23 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
       - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
-          cache: "pnpm"
+          node-version: 24
+          cache: npm
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile --only-built-dependencies
+        run: npm install --include=dev --package-lock=false
 
       - name: Install Playwright Browsers
-        run: pnpm exec playwright install --with-deps
+        run: npx playwright install --with-deps
       - name: Run Playwright tests
         env:
           VITE_FORMSPREE_FORM_ID: xkjgqedw
-        run: pnpm exec playwright test
+        run: npx playwright test
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
