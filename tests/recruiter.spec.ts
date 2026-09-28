@@ -4,6 +4,14 @@ test.describe("Portfólio franferrazdev - Jornada E2E do Recrutador", () => {
   test("deve inicializar o boot do sistema, navegar de forma síncrona e submeter o formulário de contato", async ({
     page,
   }) => {
+    await page.route("https://formspree.io/f/**", async (route) => {
+      await route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({ ok: true }),
+      });
+    });
+
     // Abre a página inicial do portfólio
     await page.goto("/");
 
@@ -52,9 +60,9 @@ test.describe("Portfólio franferrazdev - Jornada E2E do Recrutador", () => {
     const submitButton = page.locator('button[type="submit"]');
     await submitButton.click();
 
-    // Valida se o feedback reativo de envio real ou o banner de rede foi acionado com sucesso
+    // Valida o feedback de sucesso após a resposta simulada do Formspree
     const successBanner = page.locator(
-      "text=/enviada com sucesso|successfully|houve uma falha|failed/i",
+      "text=/enviada com sucesso|message sent successfully/i",
     );
     await expect(successBanner).toBeVisible();
   });
