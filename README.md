@@ -31,7 +31,7 @@ Como profissional neurodivergente **(TEA)**, este projeto traduz hiperfoco, lóg
 ### 🎥 Demonstração Visual (Project Showcase)
 
 <div align="center">
-  <img src="public/portfolio-hero.png?v=2" alt="Portfolio Preview" width="100%" style="border-radius: 12px; border: 1px solid #1e293b;" />
+  <img src="public/portfolio-hero.png?v=3" alt="Portfolio Preview" width="100%" style="border-radius: 12px; border: 1px solid #1e293b;" />
 </div>
 
 ### 🛠️ Diferenciais Técnicos e Arquitetura
@@ -65,7 +65,7 @@ As a neurodivergent professional **(ASD)**, this project converts hyperfocus, sh
 ### 🎥 Visual Demonstration (Project Showcase)
 
 <div align="center">
-  <img src="public/portfolio-hero.png?v=2" alt="Preview Portfolio" width="100%" style="border-radius: 12px; border: 1px solid #1e293b;" />
+  <img src="public/portfolio-hero.png?v=3" alt="Preview Portfolio" width="100%" style="border-radius: 12px; border: 1px solid #1e293b;" />
 </div>
 
 ### 🛠️ Technical Highlights & Architecture
