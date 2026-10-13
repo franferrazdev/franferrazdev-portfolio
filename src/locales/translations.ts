@@ -43,7 +43,7 @@ export const translations: Record<Language, TranslationSchema> = {
       contact: "Contato",
     },
     hero: {
-      role: "Desenvolvedora Front-End Júnior",
+      role: "Desenvolvedora Front-End Junior",
       headline:
         "Construindo Aplicações Web de Alta Performance, Seguras e Testadas.",
       greeting: "Olá, eu sou a Francielle Ferraz de Sousa",
@@ -51,7 +51,7 @@ export const translations: Record<Language, TranslationSchema> = {
     },
     about: {
       title: "Sobre Mim",
-      text: "Desenvolvedora especialista no ecossistema React e Next.js. Como profissional neurodivergente (TEA), transformo hiperfoco, lógica apurada e atenção extrema aos detalhes em código limpo, estruturado e de alta qualidade. Atuo com máxima eficiência no modelo 100% remoto, entregando total autonomia e comunicação escrita impecável.",
+      text: "Desenvolvedora autodidata Front-End Junior especializada no ecossistema React e Next.js. Crio interfaces modernas, perfomáticas, organizadas e acessíveis, dominando o gerenciamento de estado otimização de renderização e foco total na experiência do usuário. Como profissional neurodivergente (TEA), transformo hiperfoco, lógica apurada e atenção extrema aos detalhes em código limpo, estruturado e de alta qualidade, , entregando autonomia e soluções de engenharia ponta a ponta.",
       cardTitle: "Foco e Execução",
       cardText:
         "Abordagem voltada à arquitetura limpa, padronização rigorosa de commits e documentação assertiva. Alta adaptabilidade ao ecossistema serverless e rotinas assíncronas de engenharia.",
@@ -97,7 +97,7 @@ export const translations: Record<Language, TranslationSchema> = {
     },
     about: {
       title: "About Me",
-      text: "Developer specializing in the React and Next.js ecosystem. As a neurodivergent profesional (ASD), I transform hyperfocus, sharp logic, and extreme attention to detail into clean, structured, and high-quality code. I operate with maximum efficiency in a 100% remote model, delivering complete autonomy and flawless written communination.",
+      text: "Self-taught Junior Front-End Developer specializing in the React and Next.js ecosystem. I build modern, high-performance, organized, and accessible interfaces, mastering state management and rendering optimization with a strong focus on user experience. As a neurodivergent professional (ASD), I build hyperfocus, sharp logic, and extreme attention to detail into clean, structured, high-quality code, delivering autonomy and end-to-end engineering solutions.",
       cardTitle: "Focus & Execution",
       cardText:
         "Clean architecture-driven approach, strict commit standartization, and assertive documentation. High adaptability to serverless ecosystems and asynchronous workflows.",

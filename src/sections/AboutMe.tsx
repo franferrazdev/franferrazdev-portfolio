@@ -25,11 +25,18 @@ export function AboutMe() {
         <div className="md:col-span-8 flex flex-col gap-4 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
           {language === "pt" ? (
             <p>
-              Desenvolvedora especialista no ecossistema{" "}
+              Desenvolvedora autodidata Front-End Junior especializada no
+              ecossistema{" "}
               <strong className="font-extrabold text-slate-900 dark:text-white bg-purple-500/10 px-1 py-0.5 rounded">
                 React e Next.js
               </strong>
-              . Como profissional neurodivergente{" "}
+              . Crio interfaces{" "}
+              <strong className="font-bold text-slate-800 dark:text-slate-100">
+                modernas, perfomáticas, organizadas e acessíveis
+              </strong>
+              , dominando o gerenciamento de estado otimização de renderização e
+              foco total na experiência do usuário. Como profissional
+              neurodivergente{" "}
               <strong className="font-extrabold text-brand-purple dark:text-brand-neon">
                 (TEA)
               </strong>
@@ -37,41 +44,44 @@ export function AboutMe() {
               <strong className="font-bold text-slate-800 dark:text-slate-100">
                 hiperfoco, lógica apurada e atenção extrema aos detalhes
               </strong>{" "}
-              em código limpo, estruturado e de alta qualidade. Atuo com máxima
-              eficiência no modelo{" "}
-              <strong className="font-bold text-slate-800 dark:text-slate-100">
-                100% remoto
-              </strong>
-              , entregando total{" "}
+              em código limpo, estruturado e de alta qualidade, , entregando{" "}
               <strong className="font-bold text-slate-800 dark:text-slate-100">
                 autonomia
               </strong>{" "}
-              e comunicação escrita impecável.
+              e soluções de engenharia{" "}
+              <strong className="font-bold text-slate-800 dark:text-slate-100">
+                ponta a ponta
+              </strong>
+              .
             </p>
           ) : (
             <p>
-              Developer specializing in the{" "}
+              Self-taught Junior Front-End Developer specializing in the{" "}
               <strong className="font-extrabold text-slate-900 dark:text-white bg-purple-500/10 px-1 py-0.5 rounded">
                 React and Next.js
               </strong>{" "}
-              ecosystem. As a neurodivergent profesional{" "}
+              ecosystem. I build{" "}
+              <strong className="font-bold text-slate-800 dark:text-slate-100">
+                modern, high-performance, organized, and accessible interfaces
+              </strong>
+              , mastering state management and rendering optimization with a
+              strong focus on user experience. As a neurodivergent professional{" "}
               <strong className="font-extrabold text-brand-purple dark:text-brand-neon">
                 (ASD)
               </strong>
-              , I transform{" "}
+              , I build{" "}
               <strong className="font-bold text-slate-800 dark:text-slate-100">
                 hyperfocus, sharp logic, and extreme attention to detail
               </strong>{" "}
-              into clean, structured, and high-quality code. I operate with
-              maximum efficiency in a{" "}
-              <strong className="font-bold text-slate-800 dark:text-slate-100">
-                100% remote
-              </strong>{" "}
-              model, delivering complete{" "}
+              into clean, structured, high-quality code, delivering{" "}
               <strong className="font-bold text-slate-800 dark:text-slate-100">
                 autonomy
               </strong>{" "}
-              and flawless written communination.
+              and{" "}
+              <strong className="font-bold text-slate-800 dark:text-slate-100">
+                end-to-end
+              </strong>{" "}
+              engineering solutions.
             </p>
           )}
         </div>

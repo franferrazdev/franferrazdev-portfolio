@@ -3,6 +3,10 @@ import type { Config } from "jest";
 const config: Config = {
   preset: "ts-jest/presets/default-esm",
   testEnvironment: "jest-environment-jsdom",
+  testPathIgnorePatterns: [
+    "/node_modules/",
+    "<rootDir>/tests/", // Ignora a pasta de testes do Playwright
+  ],
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   moduleNameMapper: {
     // Resolve o mapeamento do caractere @/ para a pasta src nas importações

@@ -8,18 +8,18 @@ export function ProjectsSection() {
   // Dados dos Meus 3 Projetos
   const projectsData = [
     {
-      title: "Live Coding Bug Quiz",
-      image: "/projects/welcome-screen.png",
-      tags: ["React", "TypeScript", "Tailwind CSS", "Lucide Icons"],
+      title: "Night Owl E-commerce",
+      image: "/projects/night-owl-screen.png",
+      tags: ["React", "TypeScript", "Tailwind CSS", "Context API", "Stripe"],
       testSuite: {
         name: "Jest & RTL",
         icon: <CheckSquare size={11} />,
         type: "unit",
       },
-      github: "https://github.com/franferrazdev/live-coding-bug-quiz",
-      live: "https://live-coding-bug-quiz-one.vercel.app/",
-      pt: "Simulador técnico interativo homologado para testes de Code Review, depuração de erros em tempo real e avaliação de serioridade front-end.",
-      en: "Interactive technical simulator certified for Code Review testing, real-time debugging, and fron-end seniority assesment.",
+      github: "https://github.com/franferrazdev/night-owl-ecommerce",
+      live: "https://night-owl-ecommerce.vercel.app/",
+      pt: "Plataforma de vendas online completa contendo catálogo reativo, gerenciamento avançado de carrinho e checkout fluido.",
+      en: "Complete online sales platform featuring a reactive catalog, advanced cart management, and a seamless checkout experience.",
     },
     {
       title: "School Management Dashboard",
@@ -38,18 +38,18 @@ export function ProjectsSection() {
       en: "Full-stack corporate school management platform featuring Business Intelligence, analytical grades control, and attendance tracking.",
     },
     {
-      title: "Night Owl E-commerce",
-      image: "/projects/night-owl-screen.png",
-      tags: ["React", "TypeScript", "Tailwind CSS", "Context API", "Stripe"],
+      title: "Live Coding Bug Quiz",
+      image: "/projects/welcome-screen.png",
+      tags: ["React", "TypeScript", "Tailwind CSS", "Lucide Icons"],
       testSuite: {
         name: "Jest & RTL",
         icon: <CheckSquare size={11} />,
         type: "unit",
       },
-      github: "https://github.com/franferrazdev/night-owl-ecommerce",
-      live: "https://night-owl-ecommerce.vercel.app/",
-      pt: "Plataforma de vendas online completa contendo catálogo reativo, gerenciamento avançado de carrinho e checkout fluido.",
-      en: "Complete online sales platform featuring a reactive catalog, advanced cart management, and a seamless checkout experience.",
+      github: "https://github.com/franferrazdev/live-coding-bug-quiz",
+      live: "https://live-coding-bug-quiz-one.vercel.app/",
+      pt: "Simulador técnico interativo homologado para testes de Code Review, depuração de erros em tempo real e avaliação de serioridade front-end.",
+      en: "Interactive technical simulator certified for Code Review testing, real-time debugging, and fron-end seniority assesment.",
     },
   ];
 
