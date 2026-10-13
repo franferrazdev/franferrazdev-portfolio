@@ -116,7 +116,7 @@ export function HeroSection() {
         <div className="flex-1 flex justify-center order-1 md:order-2 animate-float">
           <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full border-4 border-purple-500/20 bg-linear-to-tr from-brand-purple/20 to-cyan-400/20 p-2 shadow-2xl overflow-hidden">
             <img
-              src="/avatar.png"
+              src="/foto-perfil.png"
               alt="Francielle Ferraz de Sousa"
               onError={(e) => {
                 e.currentTarget.style.display = "none";
