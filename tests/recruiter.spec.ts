@@ -26,6 +26,14 @@ test.describe("Portfólio franferrazdev - Jornada E2E do Recrutador", () => {
     await expect(page.locator("#hero")).toBeVisible();
     await expect(page.locator("h1")).toContainText("Francielle Ferraz");
 
+    // Busca o link que possui o atributo download apontando para o seu arquivo PDF
+    const downloadButton = page.locator('a[download*="Francielle_Ferraz"]');
+    await expect(downloadButton).toBeVisible();
+    await expect(downloadButton).toHaveAttribute(
+      "href",
+      "/Curriculo_Francielle_Ferraz_Frontend_Junior.pdf",
+    );
+
     // Testa a alternância real de idiomas (Chaveia para Inglês e checa a Navbar)
     const langButton = page
       .locator("button")
