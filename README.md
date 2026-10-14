@@ -26,7 +26,7 @@ Como profissional neurodivergente **(TEA)**, este projeto traduz hiperfoco, lóg
 
 ### 🔗 Link de Produção
 
-🚀 Acesse a aplicação completa ao vivo: **[Visualizar Portfólio na Vercel](https://vercel.app)** _(Link temporário - Ajuste após o deploy)_
+🚀 Acesse a aplicação completa ao vivo: **[Visualizar Portfólio na Vercel](https://franferrazdev-portfolio.vercel.app/)**
 
 ### 🎥 Demonstração Visual (Project Showcase)
 
@@ -60,7 +60,7 @@ As a neurodivergent professional **(ASD)**, this project converts hyperfocus, sh
 
 ### 🔗 Production Link
 
-🚀 Access the live running application: **[View Portfolio on Vercel](https://vercel.app)** _(Temporary link - Adjust after deployment)_
+🚀 Access the live running application: **[View Portfolio on Vercel](https://franferrazdev-portfolio.vercel.app/)**
 
 ### 🎥 Visual Demonstration (Project Showcase)
 
