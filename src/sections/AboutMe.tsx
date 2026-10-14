@@ -44,7 +44,7 @@ export function AboutMe() {
               <strong className="font-bold text-slate-800 dark:text-slate-100">
                 hiperfoco, lógica apurada e atenção extrema aos detalhes
               </strong>{" "}
-              em código limpo, estruturado e de alta qualidade, , entregando{" "}
+              em código limpo, estruturado e de alta qualidade, entregando{" "}
               <strong className="font-bold text-slate-800 dark:text-slate-100">
                 autonomia
               </strong>{" "}

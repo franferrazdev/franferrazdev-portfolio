@@ -106,10 +106,14 @@ export function HeroSection() {
           </div>
 
           {/* Botão de Download CV */}
-          <button className="mt-4 flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm bg-brand-purple text-white dark:bg-brand-neon dark:text-slate-950 hover:scale-105 shadow-md shadow-purple-600/10 dark:shadow-none transition-all duration-300 cursor-pointer">
+          <a
+            href="/Curriculo_Francielle_Ferraz_Frontend_Junior.pdf"
+            download="Curriculo_Francielle_Ferraz_Frontend_Junior.pdf"
+            className="mt-4 flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm bg-brand-purple text-white dark:bg-brand-neon dark:text-slate-950 hover:scale-105 shadow-md shadow-purple-600/10 dark:shadow-none transition-all duration-300 cursor-pointer"
+          >
             <Download size={16} />
             {t.hero.cvBtn}
-          </button>
+          </a>
         </div>
 
         {/* Bloco de Imagem com Animação de Flutuação (Direita) */}
