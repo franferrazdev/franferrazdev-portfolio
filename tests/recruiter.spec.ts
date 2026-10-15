@@ -31,7 +31,7 @@ test.describe("Portfólio franferrazdev - Jornada E2E do Recrutador", () => {
     await expect(downloadButton).toBeVisible();
     await expect(downloadButton).toHaveAttribute(
       "href",
-      "/Curriculo_Francielle_Ferraz_Frontend_Junior.pdf",
+      "/Curriculo_Francielle_Ferraz_Frontend_Junior_V2.pdf",
     );
 
     // Testa a alternância real de idiomas (Chaveia para Inglês e checa a Navbar)

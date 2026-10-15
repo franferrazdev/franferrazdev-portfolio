@@ -5,17 +5,38 @@ import { FaGithub } from "react-icons/fa";
 export function ProjectsSection() {
   const { language } = useLanguage();
 
+  // Interfce do formato das suítes de teste
+  interface TestSuite {
+    name: string;
+    icon: React.ReactNode;
+    type: "unit" | "e2e";
+  }
+
+  // Interface para a estrutura do projeto
+  interface Project {
+    title: string;
+    image: string;
+    tags: string[];
+    testSuites: TestSuite[];
+    github: string;
+    live: string;
+    pt: string;
+    en: string;
+  }
+
   // Dados dos Meus 3 Projetos
-  const projectsData = [
+  const projectsData: Project[] = [
     {
       title: "Night Owl E-commerce",
       image: "/projects/night-owl-screen.png",
       tags: ["React", "TypeScript", "Tailwind CSS", "Context API", "Stripe"],
-      testSuite: {
-        name: "Jest & RTL",
-        icon: <CheckSquare size={11} />,
-        type: "unit",
-      },
+      testSuites: [
+        {
+          name: "Jest & RTL",
+          icon: <CheckSquare size={11} />,
+          type: "unit",
+        },
+      ],
       github: "https://github.com/franferrazdev/night-owl-ecommerce",
       live: "https://night-owl-ecommerce.vercel.app/",
       pt: "Plataforma de vendas online completa contendo catálogo reativo, gerenciamento avançado de carrinho e checkout fluido.",
@@ -31,7 +52,13 @@ export function ProjectsSection() {
         "PostgreSQL",
         "Tailwind CSS",
       ],
-      testSuite: { name: "Playwright", icon: <Tv size={11} />, type: "e2e" },
+      testSuites: [
+        {
+          name: "Playwright",
+          icon: <Tv size={11} />,
+          type: "e2e",
+        },
+      ],
       github: "https://github.com/franferrazdev/school-management-dashboard",
       live: "https://school-management-dashboard-woad.vercel.app/",
       pt: "Plataforma corporativa full-stack de gestão escolar, Business Intelligence, controle analítico de notas e gerenciamento de chamadas.",
@@ -41,11 +68,14 @@ export function ProjectsSection() {
       title: "Live Coding Bug Quiz",
       image: "/projects/welcome-screen.png",
       tags: ["React", "TypeScript", "Tailwind CSS", "Lucide Icons"],
-      testSuite: {
-        name: "Jest & RTL",
-        icon: <CheckSquare size={11} />,
-        type: "unit",
-      },
+      testSuites: [
+        {
+          name: "Jest & RTL",
+          icon: <CheckSquare size={11} />,
+          type: "unit",
+        },
+        { name: "Playwright", icon: <Tv size={11} />, type: "e2e" },
+      ],
       github: "https://github.com/franferrazdev/live-coding-bug-quiz",
       live: "https://live-coding-bug-quiz-one.vercel.app/",
       pt: "Simulador técnico interativo homologado para testes de Code Review, depuração de erros em tempo real e avaliação de serioridade front-end.",
@@ -99,16 +129,21 @@ export function ProjectsSection() {
                   </h3>
 
                   {/* Badge Técnica de Testes */}
-                  <span
-                    className={`flex items-center gap-1.5 text-[9px] font-black tracking-wider uppercase px-2.5 py-1 rounded-md border shrink-0 transition-colors select-none ${
-                      project.testSuite.type === "e2e"
-                        ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20 dark:border-amber-500/30"
-                        : "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20 dark:border-emerald-500/30"
-                    }`}
-                  >
-                    {project.testSuite.icon}
-                    {project.testSuite.name}
-                  </span>
+                  <div className="flex flex-wrap gap-1.5 justify-end shrink-0 max-w-[50%]">
+                    {project.testSuites.map((suite) => (
+                      <span
+                        key={suite.name}
+                        className={`flex items-center gap-1.5 text-[9px] font-black tracking-wider uppercase px-2.5 py-1 rounded-md border transition-colors select-none ${
+                          suite.type === "e2e"
+                            ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20 dark:border-amber-500/30"
+                            : "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20 dark:border-emerald-500/30"
+                        }`}
+                      >
+                        {suite.icon}
+                        {suite.name}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
