@@ -18,10 +18,10 @@ export default function App() {
   const isLocked = useRef(false);
 
   // Estado que controla se o sistema já concluiu o boot de inicialização
-  const [isLoading, setIsLoading]= useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
-  /* Algoritmo que ativa as animações ao rolar a página com micro-tolerância para garantir que o React carregou 100% dos elementos na árvore DOM 
- */
+  /* Algoritmo que ativa as animações ao rolar a página com micro-tolerância para garantir que o React carregou 100% dos elementos na árvore DOM
+   */
   useEffect(() => {
     let globalObserver: IntersectionObserver | null = null;
 
@@ -111,7 +111,9 @@ export default function App() {
       </Helmet>
 
       {/* Renderiza a Splash Screen interativa se o estado isLoading for verdadeiro */}
-      {isLoading && <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />}
+      {isLoading && (
+        <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
+      )}
 
       {/* Barra Superior de Controles de Acessibilidade */}
       <Navbar />

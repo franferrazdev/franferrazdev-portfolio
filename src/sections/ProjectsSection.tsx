@@ -1,5 +1,11 @@
 import { useLanguage } from "@/context/LanguageContext";
-import { FolderGit2, ExternalLink, CheckSquare, Tv } from "lucide-react";
+import {
+  FolderGit2,
+  ExternalLink,
+  CheckSquare,
+  Tv,
+  Shuffle,
+} from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
 export function ProjectsSection() {
@@ -9,7 +15,7 @@ export function ProjectsSection() {
   interface TestSuite {
     name: string;
     icon: React.ReactNode;
-    type: "unit" | "e2e";
+    type: "unit" | "e2e" | "ci";
   }
 
   // Interface para a estrutura do projeto
@@ -36,6 +42,11 @@ export function ProjectsSection() {
           icon: <CheckSquare size={11} />,
           type: "unit",
         },
+        {
+          name: "GitHub Actions CI",
+          icon: <Shuffle size={11} />,
+          type: "ci",
+        },
       ],
       github: "https://github.com/franferrazdev/night-owl-ecommerce",
       live: "https://night-owl-ecommerce.vercel.app/",
@@ -58,6 +69,11 @@ export function ProjectsSection() {
           icon: <Tv size={11} />,
           type: "e2e",
         },
+        {
+          name: "GitHub Actions CI",
+          icon: <Shuffle size={11} />,
+          type: "ci",
+        },
       ],
       github: "https://github.com/franferrazdev/school-management-dashboard",
       live: "https://school-management-dashboard-woad.vercel.app/",
@@ -74,7 +90,16 @@ export function ProjectsSection() {
           icon: <CheckSquare size={11} />,
           type: "unit",
         },
-        { name: "Playwright", icon: <Tv size={11} />, type: "e2e" },
+        {
+          name: "Playwright",
+          icon: <Tv size={11} />,
+          type: "e2e",
+        },
+        {
+          name: "GitHub Actions CI",
+          icon: <Shuffle size={11} />,
+          type: "ci",
+        },
       ],
       github: "https://github.com/franferrazdev/live-coding-bug-quiz",
       live: "https://live-coding-bug-quiz-one.vercel.app/",
@@ -82,6 +107,18 @@ export function ProjectsSection() {
       en: "Interactive technical simulator certified for Code Review testing, real-time debugging, and fron-end seniority assesment.",
     },
   ];
+
+  // Função auxiliar para determinar as classes de estilo baseado no tipo de suite
+  const getSuiteStyles = (type: "unit" | "e2e" | "ci") => {
+    switch (type) {
+      case "e2e":
+        return "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20 dark:border-amber-500/30";
+      case "ci":
+        return "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20 dark:border-purple-500/30";
+      case "unit":
+        return "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20 dark:border-emerald-500/30";
+    }
+  };
 
   return (
     <section
@@ -128,16 +165,12 @@ export function ProjectsSection() {
                     {project.title}
                   </h3>
 
-                  {/* Badge Técnica de Testes */}
+                  {/* Badge Técnica de Testes e CI/CD */}
                   <div className="flex flex-wrap gap-1.5 justify-end shrink-0 max-w-[50%]">
                     {project.testSuites.map((suite) => (
                       <span
                         key={suite.name}
-                        className={`flex items-center gap-1.5 text-[9px] font-black tracking-wider uppercase px-2.5 py-1 rounded-md border transition-colors select-none ${
-                          suite.type === "e2e"
-                            ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20 dark:border-amber-500/30"
-                            : "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20 dark:border-emerald-500/30"
-                        }`}
+                        className={`flex items-center gap-1.5 text-[9px] font-black tracking-wider uppercase px-2.5 py-1 rounded-md border transition-colors select-none ${getSuiteStyles(suite.type)}`}
                       >
                         {suite.icon}
                         {suite.name}
