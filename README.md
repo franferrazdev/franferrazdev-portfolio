@@ -5,9 +5,10 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"  align="center" alt="React Icon" title="React" height="20" width="30" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" title="TypeScript" align="center" alt="TypeScript Icon" height="20" width="30" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" title="Tailwind CSS"  align="center" alt="TailwindCSS Icon" height="20" width="30" />
+</div>
+
 ![Tests](https://img.shields.io/badge/tests-Jest%20%7C%20Playwright-green?style=flat-square)
 ![CI](https://img.shields.io/github/actions/workflow/status/franferrazdev/franferrazdev-portfolio/playwright.yml?style=flat-square&label=CI%2FCD)
-</div>
 
 ---
 
